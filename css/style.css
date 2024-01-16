@@ -630,7 +630,3 @@ line-height: 92.9%; /* 16.722px */
             font-size: 1.6rem;
         }
 }
-input[type='date']:after {
-    color: #aaa;
-    content: attr(placeholder);
-  }
