@@ -267,6 +267,17 @@ font-weight: 400;
 line-height: normal;
 width: 51.6rem;
 text-align: left;
+-webkit-border-radius: 3rem;
+    -webkit-padding: 1.4rem 5.3rem 1.7rem;
+    background-color: transparent;
+}
+.move__input {
+    -webkit-appearance: none;
+    /* Add other Webkit-specific styles here */
+}
+.move__input::placeholder {
+    color: rgba(0, 0, 0, 0.40);
+    /* Add other styles for the placeholder here */
 }
 .input__block {
     margin-bottom: 3rem;
