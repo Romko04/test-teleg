@@ -626,4 +626,11 @@ line-height: 92.9%; /* 16.722px */
         .text span {
             line-height: 122%;
         }
+        .input__block span{
+            font-size: 1.6rem;
+        }
 }
+input[type='date']:after {
+    color: #aaa;
+    content: attr(placeholder);
+  }
