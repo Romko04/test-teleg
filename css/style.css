@@ -1,0 +1,618 @@
+/*Обнулення*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+a {
+    text-decoration: none;
+}
+
+:root {
+    --black: #2F2F2F;
+    --orange: #FDC248;
+    --white: #FFFFFF;
+}
+
+
+
+body {
+    line-height: 1;
+    height: 100vh;
+    background-color: #fff;
+}
+
+.body-block {
+    overflow: hidden;
+}
+
+
+
+.wrapper {
+    position: relative;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1 1 auto;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+:focus {
+    outline: 0;
+}
+
+ins {
+    text-decoration: none;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+body {
+    font-family: 'Evolventa', sans-serif;
+
+}
+
+.scroll--block {
+    height: 100%;
+    overflow-y: scroll;
+    position: fixed;
+    width: 100%;
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1;
+    height: 100vh;
+
+}
+
+.container {
+    max-width: 1168px;
+    margin: 0 auto;
+    padding: 0 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+
+
+html {
+    font-size: calc(100vw / 1920 * 10);
+}
+
+/* @media (max-width: 1024px) {
+    html {
+        font-size: calc(100vw / 768 * 10);
+    }
+} */
+
+@media (max-width: 767px) {
+    html {
+        font-size: calc(100vw / 500 * 10);
+    }
+
+    .main {
+        flex: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    html {
+        font-size: calc(100vw / 390 * 10);
+    }
+}
+
+/* Додати стилі для екранів з шириною 1920 пікселів */
+
+
+
+@font-face {
+    font-family: 'Delight Mother';
+    font-weight: 400;
+    font-style: normal;
+    src: url('../fonts/Delight Mother.woff2') format('woff2');
+}
+
+.move {
+    background-image: url('../img/back.jpg');
+    background-size: cover; /* або contain, залежно від вашого вибору */
+    background-position: center center; /* положення фону */
+    background-repeat: no-repeat; /* запобігає повторенню фонового зображення */
+    /* Додаткові параметри, якщо потрібно */
+    /* background-color: #фоновий_колір; */
+    /* opacity: 0.8; */
+}
+
+.move__content {
+    padding-top: 8.2rem;
+    padding-bottom: 19.2rem;
+    padding-right: 7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 19rem;
+}
+.move__content-left {
+    padding-right: 1.5rem;
+    padding-bottom: 2rem;
+    background-image: url('../img/Polygon.png');
+    background-size: cover; /* або contain, залежно від вашого вибору */
+    background-position: center right; /* положення фону */
+    background-repeat: no-repeat; /* запобігає повторенню фонового зображення */
+    height: 80rem;
+    width: 96rem;
+}
+.move__content-left__img {
+    height: 80rem;
+    width: 96rem;
+}
+
+.move__form {
+    border-radius: 3rem;
+background: #FFF;
+width: 72.5rem;
+padding: 6.4rem 10rem 7.4rem;
+}
+.move__input{
+    border-radius: 3rem;
+    padding: 1.4rem 5.3rem 1.7rem;
+
+border: 0.3rem solid #000;
+color: rgba(0, 0, 0, 0.40);
+text-align: center;
+font-family: Montserrat;
+font-size: 2.5rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+width: 51.6rem;
+text-align: left;
+}
+.input__block {
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input__block span{
+    text-align: left;
+    color: #ff0000;
+font-family: Montserrat;
+font-size: 2rem;
+font-style: normal;
+font-weight: 500;
+line-height: 92.9%; /* 27.87px */
+}
+
+
+.btn {
+    border-radius: 5rem;
+    padding: 2rem 8rem;
+background: #F63A16;
+color: #FFF;
+font-family: Montserrat;
+font-size: 1.6rem;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+text-transform: uppercase;
+border: none;
+cursor: pointer;
+transition: all .3s ease;
+}
+.btn:hover{
+    background-color: #f7836c;
+}
+.form__content-bottom{
+    text-align: left;
+}
+.form__content-bottom__span{
+    display: block;
+    margin-top: 2rem;
+    color: #000;
+font-family: Montserrat;
+font-size: 1.2rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.input__date{
+    position: relative;
+}
+
+.input__date::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}
+
+/* Встановлення власної іконки для календаря */
+.input__date::after {
+    content: '';
+    width: 20px; /* Задайте ширину вашої іконки */
+    height: 20px; /* Задайте висоту вашої іконки */
+    background-image: url('../img/calendar.svg'); /* Замініть шлях та ім'я вашої іконки */
+    background-size: cover; /* Або інші налаштування відповідно до вашого дизайну */
+    position: absolute;
+    top: 50%;
+    right: 5.3rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+.text{
+    margin-top: 32.7rem;
+    margin-left: 5rem;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 5.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+}
+.text span{
+    color: #F63A16;
+font-family: Delight Mother;
+font-size: 17rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-transform: none;
+/* margin-top: -6.3rem; */
+margin-left: 3.8rem;
+line-height: 105%;
+}
+.text strong{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 9rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-transform: uppercase;
+    line-height: 0;
+}
+.text .text__bottom{
+    color: #000;
+font-family: Montserrat;
+font-size: 5.5rem;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+text-transform: uppercase;
+/* margin-top: -5rem; */
+line-height: 0%;
+margin-left: 0;
+
+}
+
+.error-input {
+    border: 0.3rem solid red;
+  }
+
+
+
+
+
+
+
+
+  .accordeons {
+    background: #F63A16;
+    padding: 6.1rem 11.6rem;
+}
+
+.accordeon__wrapper {
+    margin-bottom: 4.8rem;
+
+}
+.accordion {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 3.5rem;
+    width: 100%;
+    text-align: left;
+    background-color: transparent;
+    border: 0.3rem solid #FFF;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 92.9%;
+    padding: 4.3rem 11.8rem  4.3rem 3.2rem ;
+    position: relative;
+    /* 32.515px */
+    cursor: pointer;
+}
+.accordion::after{
+    content: '';
+    position: absolute;
+    right: 7.3rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+    background-image: url('../img/accordeonicon.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 4.5rem;
+height: 4.5rem;
+transition: all 0.3s ease-out;
+
+}
+.accordion.active::after{
+    transform: translateY(-50%) rotate(-90deg);
+}
+.panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    color: #FFF;
+font-family: Montserrat;
+font-size: 3rem;
+font-style: normal;
+font-weight: 500;
+line-height: 92.9%; /* 27.87px */
+}
+.panel p{
+    padding-top: 3.1rem;
+
+}
+
+
+
+.footer {
+    background: #3E3E3E;
+    padding: 6.8rem 17.4rem;
+}
+
+.footer__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.footer__btn {
+    border-radius: 1rem;
+background: #FBEAEA;
+color: #000;
+text-align: center;
+font-family: Montserrat;
+font-size: 2rem;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+text-transform: uppercase;
+padding: 3rem 14.2rem;
+cursor: pointer;
+transition: all ease .3s;
+margin-right: 8.6rem;
+border: none;
+}
+.footer__btn:hover {
+    background: #bdbdbd;
+
+}
+footer span{
+    color: #FFF;
+font-family: Montserrat;
+font-size: 1.8rem;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+margin-right: 7.3rem;
+max-width: 35.6rem;
+display: inline-block;
+}
+.links{
+    display: inline-flex;
+    gap: 5.7rem;
+    align-items: center;
+    color: #FFF;
+
+}
+.links a{
+    color: #FFF;
+font-family: Montserrat;
+font-size: 1.8rem;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+text-decoration-line: underline;
+}
+
+@media (max-width: 767px) {
+    .move__content{
+        flex-direction: column;
+        gap: 6rem;
+    }
+    .move__form{
+        width: 35rem;
+        padding: 4.7rem 1.5rem ;
+        margin-bottom: 9.3rem;
+    }
+    .move__input{
+        width: 32rem;
+    }
+    .move__content-left{
+        height: 29rem;
+        width: 37rem;
+        margin-top: 5.8rem;
+    }
+    .text strong {
+        font-size: 4.5rem;
+    }
+    .text span {
+        font-size: 6.5rem;
+    }
+    .text .text__bottom{
+        font-size: 2rem;
+    }
+    .text{
+        margin-top: 11.4rem;
+}
+    .move__content{
+        padding: 0;
+        text-align: center;
+    }
+    .move__content-right{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .move__input{
+        font-size: 1.6rem;
+    }
+    .form__content-bottom{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .accordeons{
+        padding: 4rem 0.7rem;
+
+    }
+        .accordion {
+            padding: 1.2rem 5.7rem 1.2rem 1.8rem;
+            font-size: 1.5rem;
+    
+            line-height: 92.9%;
+            /* 13.935px */
+        }
+        .accordion::after{
+            width: 1.3rem;
+height: 1.3rem;
+right: 2.8rem;
+        }
+        .panel{
+font-size: 1.8rem;
+line-height: 92.9%; /* 16.722px */
+        }
+        .panel p{
+            padding-top: 1.9rem;
+        }
+        .footer{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 3.8rem;
+        }
+        .footer__btn{
+            margin: 0;
+            width: 20rem;
+            font-size: 2rem;
+            padding: 2rem 0;
+            width: 30rem;
+        }
+        footer span{
+            margin: 0;
+            text-align: center;
+        }
+        .links{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        .text span {
+            line-height: 122%;
+        }
+}
