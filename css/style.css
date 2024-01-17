@@ -638,5 +638,6 @@ input[type="date"]::before {
 input[type="date"]{
     transition: height .3s ease;
 }
-input[type="date"]:focus::before,
-input[type="date"]:valid::before { display: none; }
+input[type="date"]:valid::before { 
+    display: none;
+ }
