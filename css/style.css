@@ -272,7 +272,7 @@ text-align: left;
     background-color: transparent;
 }
 .move__input {
-    -webkit-appearance: none;
+    /* -webkit-appearance: none; */
     /* Add other Webkit-specific styles here */
 }
 .move__input::placeholder {
@@ -630,3 +630,13 @@ line-height: 92.9%; /* 16.722px */
             font-size: 1.6rem;
         }
 }
+input[type="date"]::before { 
+    content: attr(data-placeholder);
+    width: 100%;
+}
+
+/* hide our custom/fake placeholder text when in focus to show the default
+ * 'mm/dd/yyyy' value and when valid to show the users' date of birth value.
+ */
+input[type="date"]:focus::before,
+input[type="date"]:valid::before { display: none }
