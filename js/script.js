@@ -72,7 +72,7 @@ function validation(form) {
 }
 
 function submitFormToTelegram(formData) {
-  const chatId = '585455411'; // Replace with your actual chat ID
+  const chatId = '-4154767683'; // Replace with your actual chat ID
   const token = '6901569951:AAGyWYmOeyb5pvFWD6oyLoGTpKgGBmJchJk'; // Replace with your actual bot token
 
   const url = `https://api.telegram.org/bot${token}/sendMessage`;
