@@ -635,5 +635,8 @@ input[type="date"]::before {
 /* hide our custom/fake placeholder text when in focus to show the default
  * 'mm/dd/yyyy' value and when valid to show the users' date of birth value.
  */
+input[type="date"]{
+    transition: height .3s ease;
+}
 input[type="date"]:focus::before,
 input[type="date"]:valid::before { display: none; }
