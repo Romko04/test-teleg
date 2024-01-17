@@ -636,4 +636,4 @@ input[type="date"]::before {
  * 'mm/dd/yyyy' value and when valid to show the users' date of birth value.
  */
 input[type="date"]:focus::before,
-input[type="date"]:valid::before { visibility: hidden; }
+input[type="date"]:valid::before { display: none; }
