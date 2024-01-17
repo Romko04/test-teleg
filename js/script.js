@@ -49,10 +49,10 @@ function validation(form) {
       createError(input,'Це поле не може бути пустим');
     }
 
-    if (input.classList.contains('input__number') && input.value.length < 17) {
-      result = false;
-      createError(input, "Номер телефону обов'язковий для заповнення та в відповідному форматі")
-    }
+    // if (input.classList.contains('input__number') && input.value.length < 17) {
+    //   result = false;
+    //   createError(input, "Номер телефону обов'язковий для заповнення та в відповідному форматі")
+    // }
     if (input.classList.contains('input__email') && !isValidEmail(input.value)) {
       result = false;
       createError(input,"Емейл обов'язковий для заповнення")
@@ -122,9 +122,9 @@ document.querySelector('form').addEventListener('submit', function (e) {
 });
 
 
-IMask(
-  document.getElementById('tel-mask'),
-  {
-    mask: '+38 (000) 000-00-00'
-  }
-)
+// IMask(
+//   document.getElementById('tel-mask'),
+//   {
+//     mask: '+38 (000) 000-00-00'
+//   }
+// )
