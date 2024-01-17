@@ -71,6 +71,36 @@ function validation(form) {
   return result;
 }
 
+function submitFormToTelegram(formData) {
+  const chatId = '585455411'; // Replace with your actual chat ID
+  const token = '6901569951:AAGyWYmOeyb5pvFWD6oyLoGTpKgGBmJchJk'; // Replace with your actual bot token
+
+  const url = `https://api.telegram.org/bot${token}/sendMessage`;
+  const message = `New form submission:\n${JSON.stringify(formData, null, 2)}`;
+
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      chat_id: chatId,
+      text: message,
+    }),
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Telegram API response:', data);
+      const button = document.querySelector('.submit__btn')
+      const span = button.nextElementSibling
+      span.textContent = 'Невдовзі звяжемся з Вами!!!'
+    })
+    .catch(error => {
+      const span = button.nextElementSibling
+      span.textContent = 'Щось пішло не так'
+    });
+}
+
 document.querySelector('form').addEventListener('submit', function (e) {
   e.preventDefault();
 
@@ -84,7 +114,8 @@ document.querySelector('form').addEventListener('submit', function (e) {
     });
 
     // Виводимо дані алертом
-    alert(JSON.stringify(formData));
+    // alert(JSON.stringify(formData));
+    submitFormToTelegram(formData)
     // submitForm()
     // Clear errors after successful submission if needed
   }

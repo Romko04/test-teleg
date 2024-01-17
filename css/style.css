@@ -641,3 +641,15 @@ input[type="date"]{
 input[type="date"]:valid::before { 
     display: none;
  }
+.submit__span{
+    display: block;
+    margin-left: 1rem;
+    color: #000;
+
+font-family: Montserrat;
+font-size: 2.5rem;
+font-style: normal;
+font-weight: 500;
+line-height: 92.9%; /* 16.722px */
+margin: 1rem 0;
+}
