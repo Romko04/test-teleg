@@ -271,10 +271,7 @@ text-align: left;
     -webkit-padding: 1.4rem 5.3rem 1.7rem;
     background-color: transparent;
 }
-.move__input {
-    /* -webkit-appearance: none; */
-    /* Add other Webkit-specific styles here */
-}
+
 .move__input::placeholder {
     color: rgba(0, 0, 0, 0.40);
     /* Add other styles for the placeholder here */
@@ -639,4 +636,4 @@ input[type="date"]::before {
  * 'mm/dd/yyyy' value and when valid to show the users' date of birth value.
  */
 input[type="date"]:focus::before,
-input[type="date"]:valid::before { display: none }
+input[type="date"]:valid::before { visibility: hidden; }
