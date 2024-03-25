@@ -18,27 +18,9 @@
         <main class="main">
             <section class="move">
                 <div class="move__content">
-                    <div class="move__content-left">
-                        <div class="text">
-                            <p class="text__top" >
-                                <strong>Your move</strong>
-                            </p>
-                            <p class="text__middle">
-                                <span>better</span><strong>with us</strong>
-                            </p>
-                            <p class="text__bottom">
-                                <span class="text__bottom">in any region of ontario</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="move__content-right">
                         <form class="move__form" action="">
                             <div class="input__block">
-                                <input type="text" name="fullName" class="input__name move__input" placeholder="*Full name">
-                                <span></span>
-                            </div>
-                            <div class="input__block">
-                                <input id="tel-mask" type="tel" name="phoneNumber" class="input__number move__input" placeholder="*Phone number">
+                                <input type="text" name="name" class="input__name move__input" placeholder="Ім'я">
                                 <span></span>
                             </div>
                             <div class="input__block">
@@ -46,75 +28,18 @@
                                 <span></span>
                             </div>
                             <div class="input__block">
-                                <input type="text" name="movingFrom" class="input__from move__input" placeholder="*Moving from">
-                                <span></span>
-                            </div>
-                            <div class="input__block">
-                                <input type="text" name="movingTo" class="input__to move__input" placeholder="*Moving to">
-                                <span></span>
-                            </div>
-                            <div class="input__block">
-                                <input type="date" name="movingDate" class="input__date move__input" data-placeholder="Moving date" required aria-required="true" />
-                                <!-- <input type="text" name="movingDate" class="input__date move__input" placeholder="*Moving date" onfocus="(this.type='date')" onblur="(this.type='text')" > -->
+                                <textarea name="text" class="input__text move__input" placeholder="Введення тексту"  cols="30" rows="5"></textarea>
                                 <span></span>
                             </div>
                             <div class="form__content-bottom">
-                                <button type="submit" class="btn submit__btn">get a quote</button>
+                                <button type="submit" class="btn submit__btn">Надіслати<img class="circle--img" src="./img/circle-white.svg" alt="circle"></button>
                                 <span class="submit__span"></span>
-                                <span class="form__content-bottom__span">By clicking the button, you agree to our Terms of Use and Privacy Policy.</span>
+                                <span class="form__content-bottom__span">Натискаючи кнопку, ви погоджуєтеся з нашими Умовами використання та Політикою конфіденційності.</span>
                             </div>
                         </form>
-                        
-                    </div>
-                </div>
-            </section>
-            <section class="accordeons">
-                <div class="accordeon">
-                    <div class="accordeon__wrapper">
-                        <button class="accordion">1. Як проходить навчання? </button>
-                        <div class="panel">
-                            <p>
-                                На навчанні тебе чекають детальні професійні відеоуроки, зручна платформа для перегляду уроків, детальні перевірені рецептурники десертів, теоретичний матеріал в електронному форматі, для зручності завантаження, чат учасників з підтримкою і нашим зворотнім зв’язком протягом 2 місяців, сертифікат про проходження навчання, а також живу прямі ефіри та QA-сесії.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="accordeon__wrapper">
-                        <button class="accordion">2. Чи підійде для мене це навчання?</button>
-                        <div class="panel">
-                            <p>
-                                Навчання підходить для кондитерів початківців, мам в декреті, студентів та учнів навчальних закладів, професійних кондитерів, які хочуть підвищити свою кваліфікацію, або ж для тих, хто шукає себе в чомусь новому і хоче змінити професію. Навчання розроблене та розраховане на усіх, починючи від бажання навчитись випікати класні десерти, аж до бажання стати топовим професійним кондитером і заробляти на цьому.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="accordeon__wrapper">
-                        <button class="accordion">3. Чи можна розбити вартість тарифу на декілька платежів?</button>
-                        <div class="panel">
-                            <p>
-                                Так, ми надаємо можливість розтермінування платежів офіційно від банку.. ( тут пізніше пропишу додатково )
-                            </p>
-                        </div>
-                    </div>
                 </div>
             </section>
         </main>
-        
-        <footer class="footer">
-                    <a class="btn__link" href="/">
-                        <button class="footer__btn">Задати питання</button>
-                    </a>
-                    <span>
-                        ФОП fdkjlgjlkfdlkjldfgkjdfkjlgkljdfjk
-                        ЄДРПОУ 4566364
-                    </span>
-                    <div class="links">
-                        <a href="/">
-                            Політика конфіденційності     
-                        </a>
-                        <a href="/">
-                            Публічна оферта
-                        </a>
-                    </div>
-        </footer>
     </div>
     <script defer src="./js/mask.js"></script>
     <script defer src="./js/script.js"></script>

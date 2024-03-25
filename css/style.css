@@ -203,6 +203,8 @@ html {
     }
 }
 
+
+
 /* Додати стилі для екранів з шириною 1920 пікселів */
 
 
@@ -214,8 +216,14 @@ html {
     src: url('../fonts/Delight Mother.woff2') format('woff2');
 }
 
+
+
 .move {
     background-image: url('../img/back.jpg');
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-size: cover;
     /* або contain, залежно від вашого вибору */
     background-position: center center;
@@ -228,39 +236,19 @@ html {
 }
 
 .move__content {
-    padding-top: 8.2rem;
-    padding-bottom: 19.2rem;
-    padding-right: 7rem;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     gap: 19rem;
 }
 
-.move__content-left {
-    padding-right: 1.5rem;
-    padding-bottom: 2rem;
-    background-image: url('../img/Polygon.png');
-    background-size: cover;
-    /* або contain, залежно від вашого вибору */
-    background-position: center right;
-    /* положення фону */
-    background-repeat: no-repeat;
-    /* запобігає повторенню фонового зображення */
-    height: 80rem;
-    width: 96rem;
-}
-
-.move__content-left__img {
-    height: 80rem;
-    width: 96rem;
-}
 
 .move__form {
     border-radius: 3rem;
     background: #FFF;
     width: 72.5rem;
     padding: 6.4rem 10rem 7.4rem;
+    margin: 0 auto;
 }
 
 .move__input {
@@ -268,7 +256,7 @@ html {
     padding: 1.4rem 5.3rem 1.7rem;
 
     border: 0.3rem solid #000;
-    color: rgba(0, 0, 0, 0.40);
+    color: #000;
     text-align: center;
     font-family: Montserrat;
     font-size: 2.5rem;
@@ -285,6 +273,9 @@ html {
 .move__input::placeholder {
     color: rgba(0, 0, 0, 0.40);
     /* Add other styles for the placeholder here */
+}
+.input__text{
+    resize: none;
 }
 
 .input__block {
@@ -320,11 +311,33 @@ html {
     border: none;
     cursor: pointer;
     transition: all .3s ease;
+    position: relative;
 }
 
 .btn:hover {
     background-color: #f7836c;
 }
+.circle--img{
+    display: none;
+    width: 4.5rem;
+    height: 4.5rem;
+    object-fit: cover;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+.submit__btn.active .circle--img{
+    display: block;
+
+}
+.submit__btn.finished{
+    opacity: .6;
+    pointer-events: none;
+}
+
 
 .form__content-bottom {
     text-align: left;
@@ -567,7 +580,45 @@ footer span {
     margin-top: -3.9rem
 }
 
+
+
+input[type="date"]::before {
+    content: attr(data-placeholder);
+    width: 100%;
+}
+
+/* hide our custom/fake placeholder text when in focus to show the default
+ * 'mm/dd/yyyy' value and when valid to show the users' date of birth value.
+ */
+input[type="date"] {
+    transition: height .3s ease;
+}
+
+input[type="date"]:valid::before {
+    display: none;
+}
+
+.submit__span {
+    display: block;
+    margin-left: 1rem;
+    color: #000;
+
+    font-family: Montserrat;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 92.9%;
+    /* 16.722px */
+    margin: 1rem 0;
+}
+
 @media (max-width: 767px) {
+    .submit__span{
+        font-size: 1.6rem;
+    }
+    .move{
+        height: auto;
+    }
     .move__content {
         flex-direction: column;
         gap: 6rem;
@@ -611,15 +662,10 @@ footer span {
     }
 
     .move__content {
-        padding: 0;
+        padding: 5rem 0;
         text-align: center;
     }
 
-    .move__content-right {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
 
     .move__input {
         font-size: 1.6rem;
@@ -710,34 +756,3 @@ footer span {
         white-space: nowrap;
     }
 }
-
-input[type="date"]::before {
-    content: attr(data-placeholder);
-    width: 100%;
-}
-
-/* hide our custom/fake placeholder text when in focus to show the default
- * 'mm/dd/yyyy' value and when valid to show the users' date of birth value.
- */
-input[type="date"] {
-    transition: height .3s ease;
-}
-
-input[type="date"]:valid::before {
-    display: none;
-}
-
-.submit__span {
-    display: block;
-    margin-left: 1rem;
-    color: #000;
-
-    font-family: Montserrat;
-    font-size: 2.5rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 92.9%;
-    /* 16.722px */
-    margin: 1rem 0;
-}
-

@@ -1,68 +1,43 @@
-document.addEventListener('click', (e) => {
-  if (e.target.closest('.accordion')) {
-    let accordion = e.target;
-    accordion.classList.toggle('active');
 
-    let panel = accordion.nextElementSibling;
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + 'px';
-    }
-  }
-})
-
-
-
-function removeError(input) {
-  input.classList.remove('error-input');
-  const errorSpan = input.nextElementSibling;
+function removeError(field) {
+  field.classList.remove('error-field');
+  const errorSpan = field.nextElementSibling;
   errorSpan.textContent = ''
-  const parent = input.parentNode;
+  const parent = field.parentNode;
   if (parent.classList.contains('error')) {
     parent.classList.remove('error');
   }
 }
 
-function createError(input, message) {
-  const errorSpan = input.nextElementSibling;
+function createError(field, message) {
+  const errorSpan = field.nextElementSibling;
   errorSpan.classList.add('error-message');
   errorSpan.textContent = message;
 
   // Додайте клас помилки до інпута для стилізації бордера
-  input.classList.add('error-input');
+  field.classList.add('error-field');
 
 }
 
 function validation(form) {
   let result = true;
-  const allInputs = form.querySelectorAll('input');
+  const allFields = form.querySelectorAll('.move__input');
 
 
 
   // Clear existing errors
-  allInputs.forEach(input => removeError(input));
+  allFields.forEach(field => removeError(field));
 
-  allInputs.forEach(input => {
-    if (input.value.trim() === '') {
+  allFields.forEach(field => {
+    if (field.classList.contains('input__email') && !isValidEmail(field.value)) {
       result = false;
-      createError(input,'Це поле не може бути пустим');
+      createError(field, "Емейл обов'язковий для заповнення")
     }
-
-    // if (input.classList.contains('input__number') && input.value.length < 17) {
-    //   result = false;
-    //   createError(input, "Номер телефону обов'язковий для заповнення та в відповідному форматі")
-    // }
-    if (input.classList.contains('input__email') && !isValidEmail(input.value)) {
-      result = false;
-      createError(input,"Емейл обов'язковий для заповнення")
-    }
-
     function isValidEmail(email) {
       // Simple email validation regex
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return emailRegex.test(email);
-  }
+    }
     // Additional validation checks can be added here if needed
 
     return result;
@@ -71,60 +46,47 @@ function validation(form) {
   return result;
 }
 
-function submitFormToTelegram(formData) {
-  const chatId = '-4154767683'; // Replace with your actual chat ID
-  const token = '6901569951:AAGyWYmOeyb5pvFWD6oyLoGTpKgGBmJchJk'; // Replace with your actual bot token
+async function submitFormToEmail(formData) {
+  const button = document.querySelector('.submit__btn')
+  button.classList.add('active')
+  try {
+    const response = await fetch('../mail.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
 
-  const url = `https://api.telegram.org/bot${token}/sendMessage`;
-  const message = `New form submission:\n${JSON.stringify(formData, null, 2)}`;
-
-  fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      chat_id: chatId,
-      text: message,
-    }),
-  })
-    .then(response => response.json())
-    .then(data => {
-      console.log('Telegram API response:', data);
-      const button = document.querySelector('.submit__btn')
+    if (response.ok) {
+      button.classList.remove('active')
+      button.classList.add('finished')
       const span = button.nextElementSibling
       span.textContent = 'Невдовзі звяжемся з Вами!!!'
-    })
-    .catch(error => {
-      const span = button.nextElementSibling
+    } else {
+      throw new Error('Failed to submit form');
+    }
+  } catch (error) {
+    button.classList.remove('active')
+    const span = button.nextElementSibling
       span.textContent = 'Щось пішло не так'
-    });
+  }
 }
+
 
 document.querySelector('form').addEventListener('submit', function (e) {
   e.preventDefault();
 
   if (validation(this)) {
     const formData = {};
-    const allInputs = this.querySelectorAll('input');
-    allInputs.forEach(input => {
-      formData[input.name] = input.value;
-      input.value = ''
-      removeError(input)
+    const allFields = this.querySelectorAll('.move__input');
+    allFields.forEach(field => {
+      formData[field.name] = field.value;
+      field.value = ''
+      removeError(field)
     });
 
-    // Виводимо дані алертом
-    // alert(JSON.stringify(formData));
-    submitFormToTelegram(formData)
-    // submitForm()
-    // Clear errors after successful submission if needed
+    submitFormToEmail(formData)
+
   }
 });
-
-
-// IMask(
-//   document.getElementById('tel-mask'),
-//   {
-//     mask: '+38 (000) 000-00-00'
-//   }
-// )
